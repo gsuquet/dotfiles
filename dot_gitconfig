@@ -1,0 +1,13 @@
+[user]
+	signingkey = 6AFEF490423D83A7
+	email = gsuquet@ippon.fr
+	name = Gabriel Suquet
+[commit]
+	gpgsign = true
+[init]
+	defaultBranch = main
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[pull]
+	rebase = true
