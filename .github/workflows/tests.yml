@@ -1,9 +1,9 @@
 name: Test Installation
 on:
-  push:
-    branches: [ main ]
   pull_request:
-    branches: []
+    paths:
+      - '*.sh'
+      - '.github/workflows/tests.yml'
 jobs:
   tests:
     runs-on: ${{ matrix.os }}
@@ -12,8 +12,8 @@ jobs:
         os: [ubuntu-latest, windows-latest]
 
     steps:
-    - name: Setup Git Repository
-      uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
 
     - name: Validate Syntax
       run: bash -n *.sh
