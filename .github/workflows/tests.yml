@@ -1,0 +1,19 @@
+name: Test Installation
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: []
+jobs:
+  tests:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+
+    steps:
+    - name: Setup Git Repository
+      uses: actions/checkout@v3
+
+    - name: Validate Syntax
+      run: bash -n *.sh

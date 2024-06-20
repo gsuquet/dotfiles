@@ -1,0 +1,22 @@
+[user]
+	name = Gabriel Suquet
+	email = 91719818+gsuquet@users.noreply.github.com
+	signingkey = ~/.ssh/id_ed25519.pub
+[color]
+	ui = auto
+[commit]
+	gpgsign = true
+	verbose = true
+[push]
+	autoSetupRemote = true
+	default = simple
+[pull]
+	rebase = true
+[fetch]
+	prune = true
+	writeCommitGraph = true
+[init]
+	defaultBranch = main
+[credential "https://github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
