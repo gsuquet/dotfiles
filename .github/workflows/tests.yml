@@ -1,0 +1,19 @@
+name: Test Installation
+on:
+  pull_request:
+    paths:
+      - '*.sh'
+      - '.github/workflows/tests.yml'
+jobs:
+  tests:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
+
+    - name: Validate Syntax
+      run: bash -n *.sh
